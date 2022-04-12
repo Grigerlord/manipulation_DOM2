@@ -1,3 +1,6 @@
+import { registerImage } from './lazy'
+
+
 const numRandom = () => {
     const random = Math.floor(Math.random() * (122 - 1) + 1)
     return random
@@ -27,6 +30,7 @@ const addButton = document.querySelector('button')
 const addImage = () => {
     const newImage = createImageNode()
     mountNode.append(newImage)
+    registerImage(newImage)
 }
 
 addButton.addEventListener('click', addImage)
